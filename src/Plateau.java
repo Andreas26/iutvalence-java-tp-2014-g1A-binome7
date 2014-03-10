@@ -6,13 +6,9 @@ public class Plateau
 
 	private Case[][] cases;
 
-	/**
-	 * Construire un nouveau plateau de démineur, vide
-	 */
-
 	public Plateau()
 	{
-		this.cases = new Case[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
+	this.cases = new Case[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
 
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++);
