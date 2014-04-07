@@ -21,10 +21,10 @@ public class Demineur {
 		this.compteurDeCasesDecouvertes = 0;
 		this.compteurDeDrapeaux = 0;
 
-		// On cr�e les 3 tableaux composant le d�mineur
+		// On crée les 3 tableaux composant le démineur
 		this.plateauDeJeu = new Case[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
 
-		// D�finir que toutes les cases ne sont pas min�es, par d�faut
+		// Définir que toutes les cases ne sont pas minées, par défaut
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++)
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++)
 				plateauDeJeu[numeroDeLigne][numeroDeColonne] = new Case();
@@ -36,7 +36,7 @@ public class Demineur {
 	}
 
 
-	// M�thode qui place des bombes de fa�on al�atoire sur l'ensemble du plateau
+	// Méthode qui place des bombes de façon aléatoire sur l'ensemble du plateau
 	// de jeu
 
 	public void placerBombesAleatoirement()
@@ -67,46 +67,49 @@ public class Demineur {
 		    caseCourante.incrementerAdjacent();
 		}
 		
-//	XXX	
-//	if numeroDeLigne-1, numeroDeColonne
-//	if estMinee=true
-//	nombreDeMinesAdjacentes++;
-//	
-//	if numeroDeLigne-1, numeroDeColonne+1
-//	if estMinee=true
-//	nombreDeMinesAdjacentes++;
-//	
-//	if numeroDeLigne, numeroDeColonne-1
-//	if estMinee=true
-//	nombreDeMinesAdjacentes++;
-//	
-//	if numeroDeLigne, numeroDeColonne+1
-//	if estMinee=true
-//	nombreDeMinesAdjacentes++;
-//	
-//	if numeroDeLigne+1, numeroDeColonne-1
-//	if estMinee=true
-//	nombreDeMinesAdjacentes++;
-//	
-//	if numeroDeLigne+1, numeroDeColonne
-//	if estMinee=true
-//	nombreDeMinesAdjacentes++;
-//	
-//	if numeroDeLigne+1, numeroDeColonne+1
-//	if estMinee=true
-//	nombreDeMinesAdjacentes++;
+		if (plateauDeJeu[numeroDeLigne-1][numeroDeColonne].minee()) {
+		    caseCourante.incrementerAdjacent();
+		}
+		
+		if (plateauDeJeu[numeroDeLigne-1][numeroDeColonne+1].minee()) {
+		    caseCourante.incrementerAdjacent();
+		}
+		
+		if (plateauDeJeu[numeroDeLigne][numeroDeColonne-1].minee()) {
+		    caseCourante.incrementerAdjacent();
+		}
+		
+		if (plateauDeJeu[numeroDeLigne][numeroDeColonne+1].minee()) {
+		    caseCourante.incrementerAdjacent();
+		}
+		
+		if (plateauDeJeu[numeroDeLigne+1][numeroDeColonne-1].minee()) {
+		    caseCourante.incrementerAdjacent();
+		}
+		
+		if (plateauDeJeu[numeroDeLigne+1][numeroDeColonne].minee()) {
+		    caseCourante.incrementerAdjacent();
+		}
+		
+		if (plateauDeJeu[numeroDeLigne+1][numeroDeColonne+1].minee()) {
+		    caseCourante.incrementerAdjacent();
+		}
+
 	    }
 	}
-	}
+    }
 
 	public String toString()
 	{
+	    String demineurAsciiArt = "------------------------------------------------\n";
 	    /* XXX */
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++) {
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++) {
-				System.out.print(plateauDeJeu[numeroDeLigne][numeroDeColonne]);
+			
+			    demineurAsciiArt += "\n------------------------------------------------\n";
 			}
-			System.out.print("\n");
+
+			return demineurAsciiArt;
 		}
 		return "";
 	}
