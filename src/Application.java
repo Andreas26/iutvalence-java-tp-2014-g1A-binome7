@@ -1,9 +1,11 @@
+import java.util.Scanner;
+
 public class Application
-{
-    public static void main (String[] args)
+{    
+    public static void main(String[] args)
     {
-	    Demineur partie = new Demineur();
-	    partie.jouer();
+	Demineur partie = new Demineur();
+	partie.jouer();
     }
-    
+
 }

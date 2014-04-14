@@ -34,8 +34,11 @@ public class Case
     
     @Override
     public String toString() {
-	if (decouverte && !minee) {
+	if (decouverte && !minee && minesAdjacentes==0) {
 	    return ".";
+	}
+	if (decouverte && !minee) {
+	    return Integer.toString(minesAdjacentes);
 	}
 	if (decouverte && minee) {
 	    return "*";

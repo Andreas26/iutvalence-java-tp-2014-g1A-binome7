@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Demineur {
 	/** D�finition des attributs */
@@ -33,8 +34,17 @@ public class Demineur {
 	public void jouer() {
 	    placerBombesAleatoirement();
 	    System.out.println(this);
+	    this.demandeDeSaisie();
+	    }
+	
+	public int demandeDeSaisie()
+	{
+	    System.out.println("Saisissez la case à découvrir :");	    
+	    Scanner selectionCase = new Scanner(System.in);
+	    int numeroDeLigne = selectionCase.nextInt();
+	    int numeroDeColonne = selectionCase.nextInt();
+	    
 	}
-
 
 	// Méthode qui place des bombes de façon aléatoire sur l'ensemble du plateau
 	// de jeu
@@ -100,14 +110,13 @@ public class Demineur {
 
 	public String toString()
 	{
-	    String demineurAsciiArt = "------------------------------------------------\n";
-	    /* XXX */
+	    String demineurAsciiArt = "";
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++) {
-			demineurAsciiArt += '|'
+			demineurAsciiArt += '|';
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++) {
 				demineurAsciiArt += plateauDeJeu[numeroDeLigne][numeroDeColonne] + "|";
 			}
-		    demineurAsciiArt += "\n------------------------------------------------\n";
+			demineurAsciiArt += '\n';					
 		}
 		return demineurAsciiArt;
 	}
