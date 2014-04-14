@@ -38,7 +38,6 @@ public class Demineur {
 
 	// Méthode qui place des bombes de façon aléatoire sur l'ensemble du plateau
 	// de jeu
-
 	public void placerBombesAleatoirement()
     {
 	    int nbMines = 0;
