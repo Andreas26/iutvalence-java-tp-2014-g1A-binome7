@@ -104,14 +104,13 @@ public class Demineur {
 	    String demineurAsciiArt = "------------------------------------------------\n";
 	    /* XXX */
 		for (int numeroDeLigne = 0; numeroDeLigne < NOMBRE_DE_LIGNES; numeroDeLigne++) {
+			demineurAsciiArt += '|'
 			for (int numeroDeColonne = 0; numeroDeColonne < NOMBRE_DE_COLONNES; numeroDeColonne++) {
-			
-			    demineurAsciiArt += "\n------------------------------------------------\n";
+				demineurAsciiArt += plateauDeJeu[numeroDeLigne][numeroDeColonne] + "|";
 			}
-
-			return demineurAsciiArt;
+		    demineurAsciiArt += "\n------------------------------------------------\n";
 		}
-		return "";
+		return demineurAsciiArt;
 	}
 	
 	
